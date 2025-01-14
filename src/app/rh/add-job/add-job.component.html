@@ -1,0 +1,81 @@
+<div class="container mx-auto mt-8 px-60 bg-white shadow-md rounded-lg overflow-hidden justify-between items-center   ">
+  <h2 class="text-2xl font-bold mb-4">Add New Job</h2>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="jobForm" class="space-y-4">
+    <!-- Job Title -->
+    <div>
+      <label for="title" class="block text-gray-700 font-medium">Job Title</label>
+      <input id="title" formControlName="title" type="text" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+    <br>
+
+    <!-- Category -->
+    <div>
+      <label for="category" class="block text-gray-700 font-medium">Category</label>
+      <input id="category" formControlName="category" type="text" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+    <br>
+
+    <!-- Description -->
+    <div>
+      <label for="description" class="block text-gray-700 font-medium">Description</label>
+      <textarea id="description" formControlName="description" class="w-full px-4 py-2 border rounded-md"></textarea>
+    </div>
+    <br>
+
+    <!-- Location -->
+    <div>
+      <label for="location" class="block text-gray-700 font-medium">Location</label>
+      <input id="location" formControlName="location" type="text" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+    <br>
+
+    <!-- Application Deadline -->
+    <div>
+      <label for="applicationDeadline" class="block text-gray-700 font-medium">Application Deadline</label>
+      <input id="applicationDeadline" formControlName="applicationDeadline" type="date" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+    <br>
+
+    <!-- Max Applications -->
+    <div>
+      <label for="maxApplications" class="block text-gray-700 font-medium">Max Applications</label>
+      <input id="maxApplications" formControlName="maxApplications" type="number" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+    <br>
+
+    <!-- Job Type -->
+    <div>
+      <label for="jobType" class="block text-gray-700 font-medium">Job Type</label>
+      <select id="jobType" formControlName="jobType" class="w-full px-4 py-2 border rounded-md">
+        <option value="Full-Time">Full-Time</option>
+        <option value="Part-Time">Part-Time</option>
+        <option value="Contract">Contract</option>
+        <option value="Internship">Internship</option>
+      </select>
+    </div>
+    <br>
+
+    <!-- Salary Range -->
+    <div>
+      <label for="salaryRange" class="block text-gray-700 font-medium">Salary Range</label>
+      <input id="salaryRange" formControlName="salaryRange" type="text" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+
+    <br>
+    <!-- Required Skills -->
+    <div>
+      <label for="requiredSkills" class="block text-gray-700 font-medium">Required Skills</label>
+      <input id="requiredSkills" formControlName="requiredSkills" type="text" placeholder="Comma-separated values" class="w-full px-4 py-2 border rounded-md" />
+    </div>
+
+    <br>
+    <!-- Submit Button -->
+    <div>
+      <button type="submit" class="w-full bg-blue-500 text-white px-5 py-2 rounded-lg shadow-md hover:bg-blue-600 transition duration-300">
+        Add Job
+      </button>
+    </div>
+    <br>
+  </form>
+</div>

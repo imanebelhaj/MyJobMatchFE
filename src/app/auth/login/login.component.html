@@ -1,0 +1,43 @@
+<public-navbar></public-navbar>
+<div class="flex justify-center items-center h-screen">
+  <div class="text-center mb-6 absolute top-24">
+    <h1 class="text-4xl font-extrabold text-gray-800 tracking-tight leading-tight" style="font-family: 'Poppins', sans-serif;">
+      Your Journey Starts Here
+    </h1>
+    <p class="text-lg text-gray-500 mt-2">Join us to find your dream job or hire the best talent.</p>
+  </div>
+  <div class="bg-white p-8 rounded-lg shadow-lg w-96">
+
+<!--    <h2 class="text-xl font-semibold text-center mb-4 text-gray-800">Login</h2>-->
+    <form (ngSubmit)="login()">
+      <!-- Username -->
+      <div class="mb-4">
+        <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="credentials.username" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Password -->
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="credentials.password" required class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" />
+      </div>
+
+      <!-- Forgot Password Link -->
+      <div class="mb-4 text-right">
+        <a href="/forgot-password" class="text-sm text-blue-500 hover:underline">Forgot Password?</a>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-center">
+        <button type="submit" class="w-full bg-blue-500 text-white px-6 py-2 rounded-md border border-blue-500 hover:bg-blue-600">Login</button>
+      </div>
+
+      <!-- Don't have an account? Register Link -->
+      <div class="flex justify-center mt-4">
+        <p class="text-sm text-gray-700">Don't have an account?
+          <a href="/register" class="text-blue-500 hover:underline">Register</a>
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+
+<br>
+<div class="flex justify-center items-center min-h-screen">
+  <form [formGroup]="profileForm" (ngSubmit)="submitProfile()" class="w-full max-w-3xl p-8 bg-white shadow-lg rounded-lg">
+    <div class="space-y-12">
+      <div class="border-b border-gray-900/10 pb-12">
+        <h2 class="text-lg font-semibold text-gray-900">Profile</h2>
+        <p class="mt-1 text-sm text-gray-600">
+          This information will be displayed publicly, so be careful what you share.
+        </p>
+
+        <div *ngFor="let field of ['fullName', 'companyName', 'department', 'linkedinUrl', 'phone', 'companyWebsite']">
+          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+            <div class="sm:col-span-4">
+              <label [for]="field" class="block text-sm font-medium text-gray-900">
+                {{ field | titlecase }}
+              </label>
+              <div class="mt-2">
+                <div class="flex items-center rounded-md bg-white pl-3 outline outline-1 outline-gray-300">
+                  <input
+                    type="text"
+                    [id]="field"
+                    [formControlName]="field"
+                    [placeholder]="field"
+                    class="block min-w-0 grow py-1.5 pl-1 pr-3 text-base text-gray-900 placeholder:text-gray-400 sm:text-sm"
+                  />
+                </div>
+                <div *ngIf="profileForm.get(field)?.invalid && profileForm.get(field)?.touched" class="text-red-500 text-sm">
+                  {{ field | titlecase }} is required.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br>
+        <div class="col-span-full">
+          <label for="profilePictureUrl" class="block text-sm font-medium text-gray-900">Profile Photo URL</label>
+          <div class="mt-2">
+            <input
+              type="text"
+              id="profilePictureUrl"
+              formControlName="profilePictureUrl"
+              placeholder="Enter profile photo URL"
+              class="block w-full py-2 px-3 border rounded-md"
+            />
+          </div>
+          <div *ngIf="profileForm.get('profilePictureUrl')?.invalid && profileForm.get('profilePictureUrl')?.touched" class="text-red-500 text-sm">
+            Profile picture URL is required.
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="mt-6 flex items-center justify-end gap-x-6">
+        <button type="button" class="text-sm font-semibold text-gray-900" (click)="router.navigate(['/home'])">
+          Cancel
+        </button>
+        <button
+          type="submit"
+          [disabled]="profileForm.invalid || isSubmitting"
+          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
+          Save
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

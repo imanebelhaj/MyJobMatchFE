@@ -1,0 +1,86 @@
+/* General button styling for filter buttons */
+.filter-btn {
+  background-color: transparent;
+  color: #3490dc; /* Tailwind blue */
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 2px solid #3490dc;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.rotate-90 {
+  transform: rotate(90deg); /* Right-pointing arrow */
+}
+
+.rotate-180 {
+  transform: rotate(180deg); /* Down-pointing arrow */
+}
+
+.filter-btn:hover {
+  background-color: #3490dc;
+  color: white;
+}
+
+.filter-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(52, 144, 220, 0.5); /* Tailwind blue */
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-radius: 8px;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+}
+
+th {
+  background-color: #f9fafb;
+  font-weight: 600;
+}
+
+tr:hover {
+  background-color: #f1f5f9;
+}
+
+thead {
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.bg-gray-50 {
+  background-color: #fafafa;
+}
+
+.bg-white {
+  background-color: #ffffff;
+}
+
+/* Responsive table and container */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .filter-btn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+}

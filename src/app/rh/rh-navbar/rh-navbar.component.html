@@ -1,0 +1,37 @@
+<nav class="bg-white text-gray-800 shadow-md p-4 flex justify-between items-center rounded-lg">
+  <!-- Logo Section -->
+  <div class="logo">
+    <a href="/rh/dashboard-rh" class="text-2xl font-semibold text-blue-600 hover:text-blue-700 transition duration-300">Job Match</a>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="nav-links flex space-x-6">
+    <a href="/rh/dashboard-rh" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">All Jobs</a>
+    <a href="/rh/add-job" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">New Job</a>
+    <a href="#get-hired" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Applications Tracker</a>
+    <a href="/rh/view-profile" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Profile</a>
+    <a href="#about-us" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">Contact Us</a>
+  </div>
+
+
+  <div class="flex items-center space-x-4">
+    <!-- Profile Picture -->
+
+    <!-- Notification Button -->
+    <button class="relative p-2 text-gray-800 rounded-full hover:bg-gray-300 transition duration-300">
+      <span class="absolute top-2 right-0 inline-block w-2.5 h-2.5 bg-red-600 rounded-full"></span>
+      <!-- Simple grey notification icon (bell with grey color) -->
+      <i class="fas fa-bell text-gray-600"></i> <!-- Using a simple grey bell icon -->
+    </button>
+
+    <div  *ngIf="profile" class="flex -space-x-2 overflow-hidden">
+      <a routerLink="/rh/view-profile">
+        <img [src]="profile.profilePictureUrl" class="inline-block h-10 w-10 rounded-full ring-2 ring-white" alt="">
+      </a>
+    </div>
+
+
+  </div>
+</nav>
+
+
