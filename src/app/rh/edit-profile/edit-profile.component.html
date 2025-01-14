@@ -1,0 +1,118 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-50 py-12">
+  <div *ngIf="loading" class="loading-spinner">
+    <div class="spinner"></div>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <div class="container mx-auto max-w-4xl bg-white p-10 rounded-xl shadow-lg border border-gray-200" *ngIf="!loading">
+    <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Edit Your Profile</h2>
+
+    <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()" class="grid grid-cols-2 gap-8">
+      <!-- Company Name -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Company Name</label>
+        <div class="mt-2">
+          <input
+            formControlName="companyName"
+            type="text"
+            placeholder="Enter your company name"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Full Name -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Full Name</label>
+        <div class="mt-2">
+          <input
+            formControlName="fullName"
+            type="text"
+            placeholder="Enter your full name"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- LinkedIn URL -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">LinkedIn URL</label>
+        <div class="mt-2">
+          <input
+            formControlName="linkedinUrl"
+            type="url"
+            placeholder="Enter your LinkedIn profile URL"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Department -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Department</label>
+        <div class="mt-2">
+          <input
+            formControlName="department"
+            type="text"
+            placeholder="Enter your department"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Phone -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Phone</label>
+        <div class="mt-2">
+          <input
+            formControlName="phone"
+            type="text"
+            placeholder="Enter your phone number"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Company Website -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Company Website</label>
+        <div class="mt-2">
+          <input
+            formControlName="companyWebsite"
+            type="url"
+            placeholder="Enter your company website"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Profile Picture URL -->
+      <div class="col-span-2">
+        <label class="block text-base font-medium text-gray-700">Profile Picture URL</label>
+        <div class="mt-2">
+          <input
+            formControlName="profilePictureUrl"
+            type="url"
+            placeholder="Enter profile picture URL"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-span-2 mt-8">
+        <button
+          type="submit"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-md text-lg transition duration-300">
+          Update Profile
+        </button>
+      </div>
+    </form>
+
+    <!-- Success Message -->
+    <p *ngIf="successMessage" class="mt-6 text-green-600 text-center text-lg">{{ successMessage }}</p>
+  </div>
+</div>
