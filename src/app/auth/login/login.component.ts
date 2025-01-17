@@ -36,7 +36,6 @@ export class LoginComponent {
             this.router.navigate([`/rh/dashboard-rh`]);
           }
         }
-
         else if(response.role === 'CANDIDATE') {
           if (response.profileComplete === false) {
             // If profile is not complete, navigate to /rh/complete-profile
@@ -45,17 +44,15 @@ export class LoginComponent {
           } else {
             // If profile is complete, navigate to /home
             console.log('Profile complete, redirecting to /home');
-            this.router.navigate(['/jobs']);
+            this.router.navigate(['/candidate/dashboard-c']);
           }
         }
-
         else {
-          console.error('Access denied: User is not an RH.');
+          console.error('Access denied');
           this.router.navigate(['/access-denied']);
         }
 
       },
-
 
       error => {
         console.error('Login failed:', error);

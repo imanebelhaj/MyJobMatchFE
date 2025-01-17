@@ -1,0 +1,186 @@
+<div class="flex justify-center items-center min-h-screen bg-gray-50 py-12">
+  <div class="container mx-auto max-w-4xl bg-white p-10 rounded-xl shadow-lg border border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Edit Job</h2>
+
+    <form [formGroup]="editJobForm" (ngSubmit)="onSubmit()" class="grid grid-cols-2 gap-8">
+      <!-- Title -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Title</label>
+        <div class="mt-2">
+          <input
+            id="title"
+            formControlName="title"
+            type="text"
+            placeholder="Enter job title"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Category -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Category</label>
+        <div class="mt-2">
+          <input
+            id="category"
+            formControlName="category"
+            type="text"
+            placeholder="Enter job category"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Description -->
+      <div class="col-span-2">
+        <label class="block text-base font-medium text-gray-700">Description</label>
+        <div class="mt-2">
+          <textarea
+            id="description"
+            formControlName="description"
+            placeholder="Enter job description"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Location -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Location</label>
+        <div class="mt-2">
+          <input
+            id="location"
+            formControlName="location"
+            type="text"
+            placeholder="Enter job location"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Application Deadline -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Application Deadline</label>
+        <div class="mt-2">
+          <input
+            id="applicationDeadline"
+            formControlName="applicationDeadline"
+            type="date"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Max Applications -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Max Applications</label>
+        <div class="mt-2">
+          <input
+            id="maxApplications"
+            formControlName="maxApplications"
+            type="number"
+            placeholder="Enter max applications"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Job Type -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Job Type</label>
+        <div class="mt-2">
+          <input
+            id="jobType"
+            formControlName="jobType"
+            type="text"
+            placeholder="Enter job type"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Salary Range -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Salary Range</label>
+        <div class="mt-2">
+          <input
+            id="salaryRange"
+            formControlName="salaryRange"
+            type="text"
+            placeholder="Enter salary range"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Required Education -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Required Education</label>
+        <div class="mt-2">
+          <input
+            id="requiredEducation"
+            formControlName="requiredEducation"
+            type="text"
+            placeholder="Enter required education"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Required Experience -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Required Experience</label>
+        <div class="mt-2">
+          <input
+            id="requiredExperience"
+            formControlName="requiredExperience"
+            type="text"
+            placeholder="Enter required experience"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Job Level -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Job Level</label>
+        <div class="mt-2">
+          <input
+            id="jobLevel"
+            formControlName="jobLevel"
+            type="text"
+            placeholder="Enter job level"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Required Skills -->
+      <div>
+        <label class="block text-base font-medium text-gray-700">Required Skills</label>
+        <div class="mt-2">
+          <input
+            id="requiredSkills"
+            formControlName="requiredSkills"
+            type="text"
+            placeholder="Enter required skills"
+            class="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-base"
+          />
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="col-span-2 mt-8">
+        <button
+          type="submit"
+          [disabled]="editJobForm.invalid"
+          class="w-full bg-blue-500 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg shadow-md text-lg transition duration-300">
+          Update Job
+        </button>
+      </div>
+    </form>
+
+    <!-- Success Message -->
+<!--    <p *ngIf="successMessage" class="mt-6 text-green-600 text-center text-lg">{{ successMessage }}</p>-->
+  </div>
+</div>

@@ -17,7 +17,7 @@ export class DashboardRhComponent implements OnInit {
   selectedStatus: string = 'All';
   selectedJob: JobDto | null = null;
 
-  constructor(private rhService: RhService) {}
+  constructor(private rhService: RhService, private router: Router) {}
 
   ngOnInit(): void {
     this.loadJobs();
@@ -75,16 +75,31 @@ export class DashboardRhComponent implements OnInit {
     this.selectedJob = this.selectedJob?.id === jobId ? null : this.filteredJobs.find(job => job.id === jobId) || null;
   }
 
-
-
-
-  editJob(job: any) {
-    // Implement your edit logic here
+  // editJob(job: JobDto): void {
+  //   this.router.navigate(['/rh/edit-job', job.id]);
+  // }
+  editJob(job: JobDto): void {
+    const editJobUrl = `/rh/edit-job/${job.id}`;
+    console.log('Navigating to:', editJobUrl);  // Debugging log
+    this.router.navigate([editJobUrl]);
   }
 
-  deleteJob(job: any) {
-    // Implement your delete logic here
+  deleteJob(job: JobDto): void {
+    if (confirm(`Are you sure you want to delete the job "${job.title}"? This action cannot be undone.`)) {
+      this.rhService.deleteJob(job.id).subscribe(
+        () => {
+          alert('Job deleted successfully!');
+          this.jobs = this.jobs.filter(j => j.id !== job.id); // Remove deleted job from the list
+          this.filterJobs(); // Re-apply filter to update the displayed list
+        },
+        (error) => {
+          console.error('Error deleting job', error);
+          alert('Failed to delete the job. Please try again.');
+        }
+      );
+    }
   }
+
 
 
 

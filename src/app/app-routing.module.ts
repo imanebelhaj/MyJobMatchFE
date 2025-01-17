@@ -16,6 +16,11 @@ import {AddJobComponent} from './rh/add-job/add-job.component';
 import {AuthGuard} from './guard/auth.guard';
 import {ViewProfileComponent} from './rh/view-profile/view-profile.component';
 import {EditProfileComponent} from './rh/edit-profile/edit-profile.component';
+import {EditJobComponent} from './rh/edit-job/edit-job.component';
+import {CandidateLayoutComponent} from './candidate/candidate-layout/candidate-layout.component';
+import {DashboardCComponent} from './candidate/dashboard-c/dashboard-c.component';
+import {CompleteProfileCComponent} from './candidate/complete-profile-c/complete-profile-c.component';
+
 
 const routes: Routes = [
   {path:"jobs", component:JobsComponent},
@@ -32,7 +37,16 @@ const routes: Routes = [
       { path: 'add-job', component: AddJobComponent,canActivate: [AuthGuard]},
       { path: 'view-profile', component: ViewProfileComponent,canActivate: [AuthGuard]},
       { path: 'edit-profile', component: EditProfileComponent,canActivate: [AuthGuard]},
-
+      { path: 'edit-job/:id', component: EditJobComponent,canActivate: [AuthGuard]},
+    ],
+  },
+  {
+    path: 'candidate',
+    component: CandidateLayoutComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: 'complete-profile-c', component: CompleteProfileCComponent,canActivate: [AuthGuard]},
+      { path: 'dashboard-c', component: DashboardCComponent,canActivate: [AuthGuard]},
     ],
   },
   {

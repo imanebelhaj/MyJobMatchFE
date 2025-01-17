@@ -27,6 +27,7 @@ import {AuthGuard} from './guard/auth.guard';
 import { ViewProfileComponent } from './rh/view-profile/view-profile.component';
 import { EditProfileComponent } from './rh/edit-profile/edit-profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {EditJobComponent} from './rh/edit-job/edit-job.component';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     CandidateNavbarComponent,
     AddJobComponent,
     ViewProfileComponent,
-    EditProfileComponent
+    EditProfileComponent,
+    EditJobComponent
   ],
   imports: [
     BrowserModule,

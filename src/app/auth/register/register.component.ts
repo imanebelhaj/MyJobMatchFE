@@ -31,11 +31,6 @@ export class RegisterComponent {
         this.router.navigate(['/login']);
       },
       error => {
-        // if (error.status === 400 || error.status === 500) {
-        //   this.errorMessage = error.error; // Display backend error message
-        // } else {
-        //   this.errorMessage = 'An unexpected error occurred. Please try again.';
-        // }
         console.error('Registration failed:', error);
       }
     );

@@ -18,7 +18,7 @@ export class RhService {
   private getHeaders(): HttpHeaders {
     const token = localStorage.getItem(this.authSecretKey);
 
-    const formattedToken = token ? token.trim() : '';
+    const formattedToken = token ? token.trim() :'';
 
     return new HttpHeaders({
       'Content-Type': 'application/json',
@@ -53,6 +53,17 @@ export class RhService {
   getJobById(jobId: number): Observable<JobDto> {
     const headers = this.getHeaders();
     return this.http.get<JobDto>(`${baseUrl}/jobs/${jobId}`, { headers });
+  }
+
+  updateJob(id: number, job: JobDto): Observable<JobDto> {
+    const headers = this.getHeaders();
+
+
+    return this.http.put<JobDto>(`${baseUrl}/jobs/update/${id}`,job, { headers });
+  }
+  deleteJob(jobId: number): Observable<void> {
+    const headers = this.getHeaders();
+    return this.http.delete<void>(`${baseUrl}/jobs/delete/${jobId}`, { headers });
   }
 
 

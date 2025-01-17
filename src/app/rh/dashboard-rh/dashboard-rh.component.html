@@ -79,20 +79,61 @@
         </td>
       </tr>
 
-      <!-- Job Details Section -->
+
+      <!-- Job Details Section (Compact and Well-Organized) -->
       <tr *ngIf="selectedJob?.id === job.id">
-        <td colspan="5" class="bg-gray-50 px-6 py-4 shadow">
-          <div>
-            <h3 class="text-xl font-bold text-gray-800">{{ selectedJob?.title }}</h3>
-            <p><strong>Category:</strong> {{ selectedJob?.category }}</p>
-            <p><strong>Location:</strong> {{ selectedJob?.location }}</p>
-            <p><strong>Max Applications:</strong> {{ selectedJob?.maxApplications }}</p>
-            <p><strong>Status:</strong> {{ selectedJob?.status }}</p>
-            <p><strong>Description:</strong> {{ selectedJob?.description }}</p>
+        <td colspan="5" class="bg-gray-50 px-4 py-4 shadow-md rounded-md">
+          <div class="grid grid-cols-2 gap-4">
+
+            <!-- Job Info Section -->
+            <div>
+              <h3 class="text-lg font-bold text-blue-800 mb-2">{{ selectedJob?.title }}</h3>
+              <p><strong>Category:</strong> {{ selectedJob?.category }}</p>
+              <p><strong>Job Type:</strong> {{ selectedJob?.jobType }}</p>
+              <p><strong>Location:</strong> {{ selectedJob?.location }}</p>
+              <p><strong>Status:</strong> <span class="text-blue-600">{{ selectedJob?.status }}</span></p>
+              <hr class="my-2">
+            </div>
+
+            <!-- Salary and Level Section -->
+            <div>
+              <p><strong>Salary Range:</strong> {{ selectedJob?.salaryRange }}</p>
+              <p><strong>Job Level:</strong> {{ selectedJob?.jobLevel }}</p>
+              <p><strong>Max Applications:</strong> {{ selectedJob?.maxApplications }}</p>
+              <hr class="my-2">
+            </div>
+
+            <!-- Requirements Section -->
+            <div>
+              <h4 class="text-md font-semibold text-gray-700">Requirements</h4>
+              <p><strong>Education:</strong> {{ selectedJob?.requiredEducation }}</p>
+              <p><strong>Experience:</strong> {{ selectedJob?.requiredExperience }}</p>
+              <p><strong>Skills:</strong> {{ selectedJob?.requiredSkills }}</p>
+              <hr class="my-2">
+            </div>
+
+            <!-- Dates Section -->
+            <div>
+              <h4 class="text-md font-semibold text-gray-700">Dates</h4>
+              <p><strong>Created At:</strong> {{ selectedJob?.createdAt | date:'medium' }}</p>
+              <p *ngIf="selectedJob?.editedAt"><strong>Edited At:</strong> {{ selectedJob?.editedAt | date:'medium' }}</p>
+              <p><strong>Application Deadline:</strong> {{ selectedJob?.applicationDeadline | date:'medium' }}</p>
+              <p *ngIf="selectedJob?.postedAt"><strong>Posted At:</strong> {{ selectedJob?.postedAt | date:'medium' }}</p>
+            </div>
+
+            <!-- Description Section -->
+            <div class="col-span-2">
+              <h4 class="text-md font-semibold text-gray-700">Description</h4>
+              <p class="text-gray-700 leading-relaxed">{{ selectedJob?.description }}</p>
+            </div>
+
           </div>
         </td>
-
       </tr>
+
+
+
+
     </ng-container>
     </tbody>
   </table>

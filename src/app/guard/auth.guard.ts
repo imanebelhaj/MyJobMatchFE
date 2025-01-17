@@ -18,7 +18,6 @@ export class AuthGuard implements CanActivate { //,CanActivateChild
 
 
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    //console.log('Token found in localStorage:', this.authService.getToken());
 
     if (this.authService.isLoggedIn()) {
       console.log('User is logged in');
