@@ -44,7 +44,7 @@ export class LoginComponent {
           } else {
             // If profile is complete, navigate to /home
             console.log('Profile complete, redirecting to /home');
-            this.router.navigate(['/candidate/dashboard-c']);
+            this.router.navigate(['/candidate/job-list']);
           }
         }
         else {

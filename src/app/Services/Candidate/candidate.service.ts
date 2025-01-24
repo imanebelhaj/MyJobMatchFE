@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../../environments/environment.development';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {RhProfileDto} from '../../models/RhPRofileDto';
+import {CandidateDto} from '../../models/CandidateDto';
 
 const baseUrl = `${environment.API_URL}/candidate`;
 @Injectable({
@@ -23,10 +25,7 @@ export class CandidateService {
     });
   }
 
-  // firstPage(resume: any): Observable<any> {
-  //   const headers = this.getHeaders(); // Include the headers with the token
-  //   return this.http.put(`${baseUrl}/first-page`, resume, { headers });
-  // }
+
 
   firstPage(payload: any): Observable<any> {
     const headers = this.getHeaders(); // Include the headers with the token
@@ -36,6 +35,14 @@ export class CandidateService {
   completeProfile(profileData: any): Observable<any> {
     const headers = this.getHeaders(); // Include the headers with the token
     return this.http.put(`${baseUrl}/complete-profile`, profileData, { headers });
+  }
+  getProfile(): Observable<CandidateDto> {
+    const headers = this.getHeaders();
+    return this.http.get<CandidateDto>(`${baseUrl}/view-profile`, { headers });
+  }
+  updateProfile(profileData: any): Observable<any> {
+    const headers = this.getHeaders();
+    return this.http.put(`${baseUrl}/edit-profile`, profileData, { headers });
   }
 
 

@@ -23,15 +23,14 @@ import { CandidateLayoutComponent } from './candidate/candidate-layout/candidate
 import { CandidateNavbarComponent } from './candidate/candidate-navbar/candidate-navbar.component';
 import { AddJobComponent } from './rh/add-job/add-job.component';
 import {AuthInterceptor} from './auth.interceptor';
-import {AuthGuard} from './guard/auth.guard';
 import { ViewProfileComponent } from './rh/view-profile/view-profile.component';
 import { EditProfileComponent } from './rh/edit-profile/edit-profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EditJobComponent} from './rh/edit-job/edit-job.component';
 import { FirstPageComponent } from './candidate/first-page/first-page.component';
 import { JobListComponent } from './jobs/job-list/job-list.component';
-import { JobDetailsComponent } from './jobs/job-details/job-details.component';
-import { JobsPageComponent } from './jobs/jobs-page/jobs-page.component';
+import { ViewProfileCComponent } from './candidate/view-profile-c/view-profile-c.component';
+import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c.component';
 
 
 @NgModule({
@@ -58,8 +57,8 @@ import { JobsPageComponent } from './jobs/jobs-page/jobs-page.component';
     EditJobComponent,
     FirstPageComponent,
     JobListComponent,
-    JobDetailsComponent,
-    JobsPageComponent
+    ViewProfileCComponent,
+    EditProfileCComponent
   ],
   imports: [
     BrowserModule,

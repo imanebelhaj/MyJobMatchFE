@@ -11,13 +11,13 @@
     <a href="/candidate/job-list" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
       All Jobs
     </a>
-    <a href="/candidate/dashboard-c" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
+    <a href="/candidate/job-list" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
       My Jobs
     </a>
     <a href="#get-hired" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
       Applications Tracker
     </a>
-    <a href="/candidate/dashboard-c" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
+    <a href="/candidate/profile" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
       Profile
     </a>
     <a href="#about-us" class="text-sm font-medium text-gray-600 hover:text-blue-600 transition duration-300">
@@ -34,35 +34,35 @@
     </button>
 
     <!-- Profile Picture Dropdown -->
-<!--    <div class="relative">-->
-<!--      <button (click)="toggleDropdown()" class="flex items-center">-->
-<!--        <img-->
-<!--          *ngIf="profile"-->
-<!--          [src]="profile.profilePictureUrl"-->
-<!--          alt="Profile Picture"-->
-<!--          class="inline-block h-10 w-10 rounded-full ring-2 ring-white"-->
-<!--        />-->
-<!--      </button>-->
+    <div class="relative">
+      <button (click)="toggleDropdown()" class="flex items-center">
+        <img
+          *ngIf="profile"
+          [src]="profile.profilePictureUrl"
+          alt="Profile Picture"
+          class="inline-block h-10 w-10 rounded-full ring-2 ring-white"
+        />
+      </button>
 
-<!--      &lt;!&ndash; Dropdown Menu &ndash;&gt;-->
-<!--      <div-->
-<!--        *ngIf="isDropdownOpen"-->
-<!--        class="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"-->
-<!--      >-->
-<!--        <div class="py-1">-->
-<!--          <a-->
-<!--            routerLink="/rh/view-profile"-->
-<!--            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"-->
-<!--          >Profile</a-->
-<!--          >-->
-<!--          <button-->
-<!--            (click)="onLogout()"-->
-<!--            class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"-->
-<!--          >-->
-<!--            Logout-->
-<!--          </button>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
+      <!-- Dropdown Menu -->
+      <div
+        *ngIf="isDropdownOpen"
+        class="absolute right-0 mt-2 w-48 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none"
+      >
+        <div class="py-1">
+          <a
+            routerLink="/candidate/profile"
+            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+          >Profile</a
+          >
+          <button
+            (click)="onLogout()"
+            class="block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
+          >
+            Logout
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>

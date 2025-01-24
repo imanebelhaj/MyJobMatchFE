@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { JobsPageComponent } from './jobs-page.component';
+import { EditProfileCComponent } from './edit-profile-c.component';
 
-describe('JobsPageComponent', () => {
-  let component: JobsPageComponent;
-  let fixture: ComponentFixture<JobsPageComponent>;
+describe('EditProfileCComponent', () => {
+  let component: EditProfileCComponent;
+  let fixture: ComponentFixture<EditProfileCComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [JobsPageComponent]
+      declarations: [EditProfileCComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(JobsPageComponent);
+    fixture = TestBed.createComponent(EditProfileCComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
