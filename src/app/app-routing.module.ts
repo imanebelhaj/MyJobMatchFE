@@ -20,6 +20,7 @@ import {EditJobComponent} from './rh/edit-job/edit-job.component';
 import {CandidateLayoutComponent} from './candidate/candidate-layout/candidate-layout.component';
 import {DashboardCComponent} from './candidate/dashboard-c/dashboard-c.component';
 import {CompleteProfileCComponent} from './candidate/complete-profile-c/complete-profile-c.component';
+import {FirstPageComponent} from './candidate/first-page/first-page.component';
 
 
 const routes: Routes = [
@@ -45,6 +46,7 @@ const routes: Routes = [
     component: CandidateLayoutComponent,
     canActivate: [AuthGuard],
     children: [
+      { path: 'first-page', component: FirstPageComponent,canActivate: [AuthGuard]},
       { path: 'complete-profile-c', component: CompleteProfileCComponent,canActivate: [AuthGuard]},
       { path: 'dashboard-c', component: DashboardCComponent,canActivate: [AuthGuard]},
     ],

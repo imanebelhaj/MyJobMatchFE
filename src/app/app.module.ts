@@ -28,6 +28,7 @@ import { ViewProfileComponent } from './rh/view-profile/view-profile.component';
 import { EditProfileComponent } from './rh/edit-profile/edit-profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EditJobComponent} from './rh/edit-job/edit-job.component';
+import { FirstPageComponent } from './candidate/first-page/first-page.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {EditJobComponent} from './rh/edit-job/edit-job.component';
     AddJobComponent,
     ViewProfileComponent,
     EditProfileComponent,
-    EditJobComponent
+    EditJobComponent,
+    FirstPageComponent
   ],
   imports: [
     BrowserModule,

@@ -41,7 +41,7 @@ export class AuthService {
     if (role === 'RH') {
       this.router.navigate(profileComplete ? ['/api/rh/dashboard-rh'] : ['/api/rh/complete-profile']);
     } else if (role === 'CANDIDATE') {
-      this.router.navigate(profileComplete ? ['/api/candidate/dashboard-c'] : ['/api/candidate/complete-profile-c']);
+      this.router.navigate(profileComplete ? ['/api/candidate/dashboard-c'] : ['/api/candidate/first-page']);
     } else {
       console.error('Access denied.');
       this.router.navigate(['/access-denied']);

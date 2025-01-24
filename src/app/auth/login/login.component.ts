@@ -39,8 +39,8 @@ export class LoginComponent {
         else if(response.role === 'CANDIDATE') {
           if (response.profileComplete === false) {
             // If profile is not complete, navigate to /rh/complete-profile
-            console.log('Profile not complete, redirecting to /candidate/complete-profile');
-            this.router.navigate([`/candidate/complete-profile-c`]);
+            console.log('Profile not complete, redirecting to /candidate/first-page');
+            this.router.navigate([`/candidate/first-page`]);
           } else {
             // If profile is complete, navigate to /home
             console.log('Profile complete, redirecting to /home');

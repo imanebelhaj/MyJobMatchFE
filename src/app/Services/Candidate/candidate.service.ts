@@ -23,6 +23,16 @@ export class CandidateService {
     });
   }
 
+  // firstPage(resume: any): Observable<any> {
+  //   const headers = this.getHeaders(); // Include the headers with the token
+  //   return this.http.put(`${baseUrl}/first-page`, resume, { headers });
+  // }
+
+  firstPage(payload: any): Observable<any> {
+    const headers = this.getHeaders(); // Include the headers with the token
+    return this.http.put(`${baseUrl}/first-page`, payload, { headers });
+  }
+
   completeProfile(profileData: any): Observable<any> {
     const headers = this.getHeaders(); // Include the headers with the token
     return this.http.put(`${baseUrl}/complete-profile`, profileData, { headers });
