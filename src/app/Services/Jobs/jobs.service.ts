@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 
 import {environment} from '../../../environments/environment.development';
 
-const JobsUrl = `${environment.API_URL}`+'/jobs'
+const baseUrl = `${environment.API_URL}`+'/candidate/jobs'
 
 @Injectable({
   providedIn: 'root'
@@ -26,8 +26,10 @@ export class JobsService {
   }
 
   getAllJobs():Observable<any>{
-    return this.httpclient.get(JobsUrl);
+    const headers = this.getHeaders();
+    return this.httpclient.get(`${baseUrl}/allJobs`, { headers });
   }
+
 
 
 

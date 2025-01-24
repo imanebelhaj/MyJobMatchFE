@@ -1,0 +1,22 @@
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px; /* Standard scrollbar width */
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f2f2f2; /* Light grey track */
+  border-radius: 8px; /* Slightly rounded corners for the track */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #c4c4c4; /* Light grey thumb */
+  border-radius: 8px; /* Rounded corners for thumb */
+  transition: background 0.2s ease; /* Smooth transition for hover */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #a6a6a6; /* Slightly darker grey on hover */
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background: #8c8c8c; /* Even darker grey on click */
+}

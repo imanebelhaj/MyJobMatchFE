@@ -21,6 +21,9 @@ import {CandidateLayoutComponent} from './candidate/candidate-layout/candidate-l
 import {DashboardCComponent} from './candidate/dashboard-c/dashboard-c.component';
 import {CompleteProfileCComponent} from './candidate/complete-profile-c/complete-profile-c.component';
 import {FirstPageComponent} from './candidate/first-page/first-page.component';
+import {JobDetailsComponent} from './jobs/job-details/job-details.component';
+import {JobListComponent} from './jobs/job-list/job-list.component';
+import {JobsPageComponent} from './jobs/jobs-page/jobs-page.component';
 
 
 const routes: Routes = [
@@ -48,6 +51,9 @@ const routes: Routes = [
     children: [
       { path: 'first-page', component: FirstPageComponent,canActivate: [AuthGuard]},
       { path: 'complete-profile-c', component: CompleteProfileCComponent,canActivate: [AuthGuard]},
+      { path: 'job-details', component: JobDetailsComponent,canActivate: [AuthGuard]},
+      { path: 'job-list', component: JobListComponent,canActivate: [AuthGuard]},
+      { path: 'jobs-page', component: JobsPageComponent,canActivate: [AuthGuard]},
       { path: 'dashboard-c', component: DashboardCComponent,canActivate: [AuthGuard]},
     ],
   },

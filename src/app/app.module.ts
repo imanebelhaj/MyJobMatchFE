@@ -29,6 +29,9 @@ import { EditProfileComponent } from './rh/edit-profile/edit-profile.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EditJobComponent} from './rh/edit-job/edit-job.component';
 import { FirstPageComponent } from './candidate/first-page/first-page.component';
+import { JobListComponent } from './jobs/job-list/job-list.component';
+import { JobDetailsComponent } from './jobs/job-details/job-details.component';
+import { JobsPageComponent } from './jobs/jobs-page/jobs-page.component';
 
 
 @NgModule({
@@ -53,7 +56,10 @@ import { FirstPageComponent } from './candidate/first-page/first-page.component'
     ViewProfileComponent,
     EditProfileComponent,
     EditJobComponent,
-    FirstPageComponent
+    FirstPageComponent,
+    JobListComponent,
+    JobDetailsComponent,
+    JobsPageComponent
   ],
   imports: [
     BrowserModule,
