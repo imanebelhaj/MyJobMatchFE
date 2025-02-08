@@ -31,6 +31,20 @@ export class JobsService {
   }
 
 
+  getMatchedJobs():Observable<any>{
+    const headers = this.getHeaders();
+    return this.httpclient.get(`${baseUrl}/matched-jobs-2`, { headers });
+  }
+
+  // In JobsService
+  hasApplied(jobId: number): Observable<boolean> {
+    const headers = this.getHeaders();
+    return this.httpclient.get<boolean>(`${baseUrl}/hasApplied/${jobId}`, { headers });
+  }
+
+
+
+
 
 
 

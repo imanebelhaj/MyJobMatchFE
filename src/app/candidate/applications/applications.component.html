@@ -1,0 +1,47 @@
+<!-- Filter Buttons -->
+<!--<div class="container mx-auto mt-6 px-6">-->
+<!--  <div class="flex space-x-6">-->
+<!--    <button (click)="setFilter('All')" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition duration-300">All</button>-->
+<!--    <button (click)="setFilter('Pending')" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition duration-300">Pending</button>-->
+<!--    <button (click)="setFilter('Reviewed')" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition duration-300">Reviewed</button>-->
+<!--    <button (click)="setFilter('Accepted')" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition duration-300">Accepted</button>-->
+<!--    <button (click)="setFilter('Rejected')" class="border border-blue-500 text-blue-500 px-6 py-2 rounded-md text-sm font-medium hover:bg-blue-200 transition">Rejected</button>-->
+<!--  </div>-->
+<!--</div>-->
+
+<!--<br>-->
+
+<!-- Applications Table -->
+<div class="container mx-auto mt-8 px-6 bg-white shadow-md rounded-lg overflow-hidden">
+  <table class="min-w-full table-auto border-collapse">
+    <thead>
+    <tr class="bg-gray-50 text-gray-700">
+      <th class="px-6 py-4 text-left font-medium">Job Title</th>
+      <th class="px-6 py-4 text-left font-medium">Category</th>
+      <th class="px-6 py-4 text-center font-medium">Status</th>
+      <th class="px-6 py-4 text-center font-medium">Date</th>
+    </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-200">
+    <ng-container *ngFor="let application of filteredApplications">
+      <tr class="hover:bg-gray-100 cursor-pointer">
+        <td class="px-6 py-4 text-left text-gray-700">{{ application.jobDto.title }}</td>
+        <td class="px-6 py-4 text-left text-gray-700">{{ application.jobDto.category }}</td>
+        <td class="px-6 py-4 text-center text-gray-700">
+            <span class="px-3 py-1 rounded-md text-xs"
+                  [ngClass]="{
+                'bg-blue-200 text-blue-800': application.status === 'Pending',
+                'bg-purple-200 text-purple-800': application.status === 'Reviewed',
+                'bg-green-200 text-green-800': application.status === 'Accepted',
+                'bg-red-200 text-red-800': application.status === 'Rejected'
+              }">
+              {{ application.status }}
+            </span>
+        </td>
+        <td class="px-6 py-4  text-center text-gray-700">{{ application.applicationDate | date:'d MMM y' }}</td>
+
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

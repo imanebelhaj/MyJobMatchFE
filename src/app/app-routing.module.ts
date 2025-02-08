@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {JobsComponent} from './jobs/jobs.component';
 import {RegisterComponent} from './auth/register/register.component';
 import {LoginComponent} from './auth/login/login.component';
 import {HomeComponent} from './public/home/home.component';
@@ -24,10 +23,11 @@ import {FirstPageComponent} from './candidate/first-page/first-page.component';
 import {JobListComponent} from './jobs/job-list/job-list.component';
 import {ViewProfileCComponent} from './candidate/view-profile-c/view-profile-c.component';
 import {EditProfileCComponent} from './candidate/edit-profile-c/edit-profile-c.component';
+import {ApplicationsComponent} from './candidate/applications/applications.component';
+import {MatchedJobsComponent} from './jobs/matched-jobs/matched-jobs.component';
 
 
 const routes: Routes = [
-  {path:"jobs", component:JobsComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent},
 
@@ -52,9 +52,11 @@ const routes: Routes = [
       { path: 'first-page', component: FirstPageComponent,canActivate: [AuthGuard]},
       { path: 'complete-profile-c', component: CompleteProfileCComponent,canActivate: [AuthGuard]},
       { path: 'job-list', component: JobListComponent,canActivate: [AuthGuard]},
+      { path: 'matched-jobs', component: MatchedJobsComponent,canActivate: [AuthGuard]},
       { path: 'profile', component: ViewProfileCComponent,canActivate: [AuthGuard]},
       { path: 'edit-profile', component: EditProfileCComponent,canActivate: [AuthGuard]},
       { path: 'dashboard-c', component: DashboardCComponent,canActivate: [AuthGuard]},
+      { path: 'applications', component: ApplicationsComponent,canActivate: [AuthGuard]},
     ],
   },
   {

@@ -23,13 +23,10 @@ export class EditProfileCComponent implements OnInit {
     private router: Router
   ) {
     this.editProfileForm = this.fb.group({
-      // companyName: ['', Validators.required],
-      fullName: ['', Validators.required],
+      fullName: [''],
       linkedinUrl: [''],
       category: [''],
-      phone: ['', [Validators.required, Validators.pattern(/^\d{10}$/)]],
-      // companyWebsite: [''],
-      //profilePictureUrl: ['']
+      phone: [''],
     });
   }
 

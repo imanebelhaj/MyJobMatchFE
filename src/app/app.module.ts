@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
-import { JobsComponent } from './jobs/jobs.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
@@ -31,6 +30,9 @@ import { FirstPageComponent } from './candidate/first-page/first-page.component'
 import { JobListComponent } from './jobs/job-list/job-list.component';
 import { ViewProfileCComponent } from './candidate/view-profile-c/view-profile-c.component';
 import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { ApplicationsComponent } from './candidate/applications/applications.component';
+import { MatchedJobsComponent } from './jobs/matched-jobs/matched-jobs.component';
 
 
 @NgModule({
@@ -38,7 +40,6 @@ import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c
     AppComponent,
     RegisterComponent,
     LoginComponent,
-    JobsComponent,
     PublicNavbarComponent,
     HomeComponent,
     FooterComponent,
@@ -58,7 +59,10 @@ import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c
     FirstPageComponent,
     JobListComponent,
     ViewProfileCComponent,
-    EditProfileCComponent
+    EditProfileCComponent,
+    ApplicationsComponent,
+    MatchedJobsComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -67,12 +71,9 @@ import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    NgOptimizedImage
-    // BrowserAnimationsModule,
-    // ToastrModule.forRoot({
-    //   positionClass: 'toast-top-right', // You can change the position
-    //   preventDuplicates: true
-    // }),
+    NgOptimizedImage,
+    MatSnackBarModule,
+    BrowserAnimationsModule
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ],

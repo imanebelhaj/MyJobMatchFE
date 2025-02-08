@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {JobsService} from '../../Services/Jobs/jobs.service';
-import { MatSnackBar } from '@angular/material/snack-bar';
 import {ApplicationsService} from '../../Services/Applications/applications.service';
-import {Router} from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 interface Job {
   id: number;
   title: string;
@@ -25,13 +26,14 @@ interface Job {
 }
 
 @Component({
-  selector: 'app-job-list',
+  selector: 'app-matched-jobs',
   standalone: false,
 
-  templateUrl: './job-list.component.html',
-  styleUrl: './job-list.component.css'
+  templateUrl: './matched-jobs.component.html',
+  styleUrl: './matched-jobs.component.css'
 })
-export class JobListComponent implements OnInit {
+
+export class MatchedJobsComponent implements OnInit {
   jobs: Job[] = [];
   selectedJob: Job | null = null;
   appliedJobs: Set<number> = new Set();
@@ -43,8 +45,14 @@ export class JobListComponent implements OnInit {
 
   ngOnInit(): void {this.fetchJobs();}
 
+  // fetchJobs(): void {
+  //   this.jobService.getAllJobs().subscribe((data) => {
+  //     this.jobs = data;
+  //   });
+  // }
+
   fetchJobs(): void {
-    this.jobService.getAllJobs().subscribe((data) => {
+    this.jobService.getMatchedJobs().subscribe((data) => {
       this.jobs = data;
     });
   }
@@ -95,3 +103,4 @@ export class JobListComponent implements OnInit {
     }, 5000); // Hide after 5 seconds
   }
 }
+

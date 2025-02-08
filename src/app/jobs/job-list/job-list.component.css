@@ -20,3 +20,16 @@
 .custom-scrollbar::-webkit-scrollbar-thumb:active {
   background: #8c8c8c; /* Even darker grey on click */
 }
+/* job-list.component.css */
+.custom-snackbar {
+  background-color: #4caf50; /* Success green */
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.custom-snackbar .mat-button-wrapper {
+  color: white; /* Close button text color */
+}
