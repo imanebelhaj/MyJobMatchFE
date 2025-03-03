@@ -33,6 +33,7 @@ import { EditProfileCComponent } from './candidate/edit-profile-c/edit-profile-c
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { ApplicationsComponent } from './candidate/applications/applications.component';
 import { MatchedJobsComponent } from './jobs/matched-jobs/matched-jobs.component';
+import { ApplicationsDashboardComponent } from './rh/applications-dashboard/applications-dashboard.component';
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { MatchedJobsComponent } from './jobs/matched-jobs/matched-jobs.component
     EditProfileCComponent,
     ApplicationsComponent,
     MatchedJobsComponent,
+    ApplicationsDashboardComponent,
 
   ],
   imports: [

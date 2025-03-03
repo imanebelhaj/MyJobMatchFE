@@ -25,6 +25,7 @@ import {ViewProfileCComponent} from './candidate/view-profile-c/view-profile-c.c
 import {EditProfileCComponent} from './candidate/edit-profile-c/edit-profile-c.component';
 import {ApplicationsComponent} from './candidate/applications/applications.component';
 import {MatchedJobsComponent} from './jobs/matched-jobs/matched-jobs.component';
+import {ApplicationsDashboardComponent} from './rh/applications-dashboard/applications-dashboard.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: 'view-profile', component: ViewProfileComponent,canActivate: [AuthGuard]},
       { path: 'edit-profile', component: EditProfileComponent,canActivate: [AuthGuard]},
       { path: 'edit-job/:id', component: EditJobComponent,canActivate: [AuthGuard]},
+      { path: 'applications', component: ApplicationsDashboardComponent,canActivate: [AuthGuard]},
     ],
   },
   {

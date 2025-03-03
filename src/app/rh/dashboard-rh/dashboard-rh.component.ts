@@ -107,9 +107,10 @@ export class DashboardRhComponent implements OnInit {
     // Implement your track logic here
   }
 
-  viewApplications(job: any) {
-    // Implement your view applications logic here
+  viewApplications(jobId:number) {
+    this.router.navigate(['/rh/applications'], { queryParams: { jobId: jobId } });
   }
+
 
   archiveJob(job: any) {
     // Implement your archive logic here

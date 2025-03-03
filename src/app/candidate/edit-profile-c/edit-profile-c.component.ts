@@ -24,6 +24,7 @@ export class EditProfileCComponent implements OnInit {
   ) {
     this.editProfileForm = this.fb.group({
       fullName: [''],
+      profilePictureUrl: [''],
       linkedinUrl: [''],
       category: [''],
       phone: [''],

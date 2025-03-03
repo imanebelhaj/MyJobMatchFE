@@ -31,17 +31,14 @@ export class ApplicationsService {
     return this.httpclient.post(`${baseUrl}/candidate/apply/${jobId}`, null, { headers }); // Pass `null` for the body
   }
 
-  // getApplications():Observable<any>{
-  //   const headers = this.getHeaders();
-  //   return this.httpclient.get(`${baseUrl}/candidate`, { headers });
-  // }
 
   getApplications(): Observable<ApplicationDto[]> {
     return this.httpclient.get<ApplicationDto[]>(`${baseUrl}/candidate`, { headers: this.getHeaders() });
   }
-  // getJobById(jobId: number): Observable<JobDto> {
-  //   const headers = this.getHeaders();
-  //   return this.httpclient.get<JobDto>(`${baseUrl}/candidate/${jobId}`, { headers });
-  // }
+
+  getApplicationsByJob(jobId: number): Observable<ApplicationDto[]> {
+    return this.httpclient.get<ApplicationDto[]>(`${baseUrl}/rh/${jobId}`, { headers: this.getHeaders() });
+  }
+
 
 }

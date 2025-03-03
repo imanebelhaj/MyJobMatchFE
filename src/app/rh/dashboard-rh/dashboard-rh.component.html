@@ -70,7 +70,7 @@
             <button *ngIf="job.status === 'Posted'" (click)="trackJob(job)" class="bg-blue-200 text-blue-800 text-xs px-3 py-1 rounded-md hover:bg-blue-300 transition duration-200">Track</button>
 
             <!-- View Applications and Archive for Completed Jobs -->
-            <button *ngIf="job.status === 'Completed'" (click)="viewApplications(job)" class="bg-purple-200 text-purple-800 text-xs px-3 py-1 rounded-md hover:bg-purple-300 transition duration-200">View Applications</button>
+            <button *ngIf="job.status === 'Completed'" (click)="viewApplications(job.id)" class="bg-purple-200 text-purple-800 text-xs px-3 py-1 rounded-md hover:bg-purple-300 transition duration-200">View Applications</button>
             <button *ngIf="job.status === 'Completed'" (click)="archiveJob(job)" class="bg-gray-200 text-gray-800 text-xs px-3 py-1 rounded-md hover:bg-gray-300 transition duration-200">Archive</button>
 
             <!-- Archive for Archived Jobs -->

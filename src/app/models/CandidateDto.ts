@@ -2,7 +2,7 @@ export interface CandidateDto {
   fullName: string;
   username: string;
   email: string;
-  profilePictureUrl: File; //Blob
+  profilePictureUrl: string; //Blob
   phone: string;
   linkedinUrl: string;
   category: string;
